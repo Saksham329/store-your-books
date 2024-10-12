@@ -1,0 +1,19 @@
+<%- include('header') %>
+<div class="addPost">
+    <form action="/add" method="post">
+        <label for="">Title</label>
+        <input class="title" type="text" name="title" placeholder="Title here">
+
+        <label for="">Isbn</label>
+        <input class="isbn" type="integer" name="isbn" placeholder="isbn">
+
+        <label for="">Summary</label>
+        <textarea class="summary" name="summary" placeholder="Summary here"></textarea>
+
+        <label for="">Rating</label>
+        <input class="rating" type="text" name="rating" placeholder="rating">
+
+        <button class="submit" type="submit">submit</button>
+
+    </form>
+</div>

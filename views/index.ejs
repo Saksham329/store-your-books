@@ -1,0 +1,67 @@
+<%- include('header') %>
+
+    <div class="description">
+        <P>The website is a book tracking platform that allows users to store and organize books they have read. Users can create a personal library by adding books, along with details like title, ISBN, summary, and ratings. The platform also includes features like editing and deleting book entries, leaving reviews for individual books, and viewing reviews from other users. With an easy-to-navigate interface and customizable options for each book, it serves as a virtual bookshelf where users can keep track of their reading journey and share insights about their favorite books.</P>
+   </div>
+        <% books.forEach(book => {%>
+        <div class="container">
+            <div class="box-left">
+                <img src="https://covers.openlibrary.org/b/isbn/<%=book.isbn %>-M.jpg" alt="">
+                <div class=" edit delete">
+                    <form action="/edit" method="post">
+                        <button class="btnEdit" type="submit" name ="book_id" value="<%=book.id%>"> edit</button>
+                    </form>
+                    <form action="/delete" method="post">
+                        <input type="hidden" name="upd_book_id" value="<%=book.id%>"></input>
+                        <button class="btnDelete" type = "submit" name="book_id" value="book.id">delete</button>
+                    </form> 
+                </div>   
+            </div>
+    
+            <div class="box-right">
+                <h2><%= book.title %></h2>
+                <div class="book-nav">
+                    <div class="book_nav_info">
+                        <p>
+                            Author
+                        </p>
+                        <span>
+                            <%= book.author %>
+                        </span>
+                        
+                    </div>
+                    <div class="book_nav_info">
+                        <p>
+                            Commence Date
+                        </p>
+                        <span>
+                            <%= book.commence_date %>
+                        </span>
+                    </div>
+                    <div class="book_nav_info">
+                        <p>
+                            Rating
+                        </p>
+                        <span>
+                            <%= book.rating %>
+                        </span>
+                    </div>
+
+                </div>
+                <div class="summary ">
+                    <p>
+                        from the flap:
+                    </p>
+                    <p>
+                        <%= book.summary %>
+                    </p>
+                </div>
+
+                <div class="review">
+                    <form action="/reviews" method="post">
+                        <button class="btnreview" type="submit"  name="book_id" value="<%=book.id%>">See Reviews</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <%});%>

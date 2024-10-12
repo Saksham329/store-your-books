@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/main.css">
+</head>
+<body>
+    <div class="nav-box"></div>
+    <div class="nav-bar">
+        <h3>STORE YOUR BOOKS</h3>
+            <div class="nav-btn">
+                <a><ul>Home</ul></a>
+                <a href="./add"><ul>Add Book</ul></a>
+            </div>   
+    </div>
+</div>
+    
+    <% if (book){%>
+        <div class="container">
+            <div class="box-left">
+                <img src="https://covers.openlibrary.org/b/isbn/<%=book.isbn %>-M.jpg" alt="">
+                <div class=" edit delete">
+                    <form action="/edit" method="post">
+                        <button class="btnEdit" type="submit" name ="book_id" value="<%=book.id%>"> edit</button>
+                    </form>
+                    <form action="/delete" method="post">
+                        <input type="hidden" name="upd_book_id" value="<%=book.id%>"></input>
+                        <button class="btnDelete" type = "submit" name="book_id" value="book.id">delete</button>
+                    </form> 
+                </div>   
+            </div>
+    
+            <div class="box-right">
+                <h2><%= book.title %></h2>
+                <div class="book-nav">
+                    <div class="book_nav_info">
+                        <p>
+                            Author
+                        </p>
+                        <span>
+                            <%= book.author %>
+                        </span>
+                        
+                    </div>
+                    <div class="book_nav_info">
+                        <p>
+                            Commence Date
+                        </p>
+                        <span>
+                            <%= book.commence_date %>
+                        </span>
+                    </div>
+                    <div class="book_nav_info">
+                        <p>
+                            Rating
+                        </p>
+                        <span>
+                            <%= book.rating %>
+                        </span>
+                    </div>
+
+                </div>
+                <div class="summary ">
+                    <p>
+                        from the flap:
+                    </p>
+                    <p>
+                        <%= book.summary %>
+                    </p>
+                </div>
+
+            </div>
+            
+        </div>
+        <div class="reviews">
+            <form action="/addReview" method="post">
+                <input class="inpReview" type="text" placeholder="post a review" name="review">
+                <button class="btnreviews" type="submit" name="review_id" value="<%= book.id %>">post</button>
+            </form>
+        </div>
+    <%}%>
+    
+    <div class="reviews">
+        <% if (reviews.length > 0) { %>
+            <% reviews.forEach(review => { %>
+                <div class="showreview">
+                    <p><%= review.review %></p>
+                </div>    
+            <% }) %>
+        <% } else { %>
+            <p>No reviews yet</p>
+        <% } %>
+    </div>
+</body>
+</html>
+   

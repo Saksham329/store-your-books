@@ -1,0 +1,356 @@
+html{
+    background-color: #F4F4F4;
+    color: #333333;
+    font-family: Arial, sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+.nav-bar{
+    display: flex;
+    justify-content:space-between;
+    background: linear-gradient(90deg, #2C3E50, #3A5068);
+    color: #FFFFFF; 
+    padding-bottom: 15px;
+    width: 100%;
+}
+.nav-bar h3{
+    margin-left: 20px;
+    color: white;
+}
+.nav-bar a {
+    text-decoration: none;
+    color: white;
+}
+
+.nav-bar a:hover{
+    text-decoration: underline;
+    color: #FF6F61;
+}
+
+.nav-btn{
+    display: flex;
+    gap: 5px;
+    margin-right: 30px;
+    color: white;
+}
+
+
+
+.nav-btn a:hover {
+    text-decoration: underline;
+}
+.description{
+    margin-top: -20px;
+    background: linear-gradient(to bottom, #FF6F61, #FFD1C1);
+    color: #333333;
+    padding: 20px;
+    border-radius: 10px;
+}
+.description p {
+    margin: auto;
+    text-align: center;
+    font-size: 1.3rem;
+    padding: 20px;
+    width: 70%;
+    text-align: justify;
+    color: #34495E;
+}
+.container{
+    background: linear-gradient(to bottom, #D3E4FF, #FFFFFF);
+    border: 1px solid #C1D9FF;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    width:70%;
+    margin:auto;
+    height:100%;
+    border-radius: 10px;
+    margin-bottom: 8%;
+    margin-top: 5%;
+    
+}
+
+.box-left{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border:solid 1px rgb(203, 203, 182);
+    width:25%;
+    border-radius: 10px;
+    margin:2% ;
+    padding-bottom: 2%;
+    padding-top: 2%;
+    color: #34495E;
+}
+.box-left img{
+    border-radius: 10px;
+}
+
+.box-right {
+    display: flex;
+    width:70%;
+    flex-direction: column;
+}
+.box-right h2{
+    display: flex;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: oblique;
+    text-decoration: underline;
+    color: #34495E;
+    justify-content: center;
+}
+.box-right {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #34495E;
+}
+
+.book-nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border: 1px solid #333;
+    background-color: #34495E;
+    border-radius: 10px;
+}
+.book_nav_info{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid white;
+    padding: 3px;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    background-color: #34495E;
+    color: white;
+}
+span{
+    color: rgb(137, 137, 244);
+    align-items:center;
+    justify-content: center;
+    align-items: center;
+}
+
+/* General styling for the form container */
+.addPost {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f7f7f7;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+}
+
+
+.addPost label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #333;
+}
+
+
+.addPost input[type="text"],
+.addPost input[type="integer"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+}
+
+
+.addPost input[type="text"]:focus,
+.addPost input[type="integer"]:focus {
+    border-color: #007bff;
+    outline: none;
+}
+input, textarea {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+.addPost .submit {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.addPost .submit:hover {
+    background-color: #0056b3;
+}
+
+.edit, .delete, .reviews {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.edit form, .delete form {
+    display: inline-block;
+    margin-right: 5px;
+}
+
+button {
+    padding: 8px 15px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Edit button */
+button.btnEdit {
+    background-color: #4CAF50;
+    color: white;
+}
+
+button.btnEdit:hover {
+    background-color: #45a049;
+}
+
+/* Delete button */
+button.btnDelete {
+    background-color: #f44336;
+    color: white;
+}
+
+button.btnDelete:hover {
+    background-color: #e53935;
+}
+
+/* See Reviews button */
+button.btnreview{
+    background-color: #2196F3;
+    color: white;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+button.btnreviews:hover {
+    background-color: #1e88e5;
+}
+.review{
+    display: flex;
+    justify-content: center;
+}
+
+/* Responsive behavior */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .box-left, .box-right {
+        width: 100%;
+    }
+
+    .book-nav {
+        flex-direction: column;
+    }
+
+    .edit, .delete, .reviews {
+        margin-top: 10px;
+        text-align: center;
+    }
+}
+
+.reviews {
+    margin-top: 20px;
+    padding: 10px 0;
+    border-top: 1px solid #ddd;
+}
+
+.showreview {
+    display: flex;
+    align-items: flex-start;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.showreview:last-child {
+    border-bottom: none;
+}
+
+/* Profile picture placeholder */
+.showreview::before {
+    content: '';
+    width: 40px;
+    height: 40px;
+    background-color: #ccc;
+    border-radius: 50%;
+    margin-right: 15px;
+    display: inline-block;
+}
+
+/* Review content */
+.showreview p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #333;
+}
+
+.showreview p span {
+    font-weight: bold;
+    color: #555;
+    margin-right: 5px;
+}
+
+.reviews p {
+    font-size: 14px;
+    color: #888;
+}
+
+/* No reviews message */
+.reviews p.no-reviews {
+    font-style: italic;
+    color: #666;
+    text-align: center;
+    padding: 10px;
+    border-top: 1px solid #ddd;
+}
+
+/* Add some hover effect for user engagement */
+.showreview:hover {
+    background-color: #f9f9f9;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 480px) {
+    .addPost {
+        padding: 10px;
+    }
+
+    .addPost label,
+    .addPost input[type="text"],
+    .addPost input[type="integer"],
+    .addPost .submit {
+        font-size: 14px;
+    }
+}

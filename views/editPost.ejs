@@ -1,0 +1,22 @@
+<%- include('header') %>
+    <% if(book){%>
+        <form action="/save" method="post">
+            
+    <label for="">title</label>
+    <input type="text" name="upd_title" placeholder="<%= book.title %>"value="<%=book.title%>">
+
+    <label for="">isbn</label>
+    <input type="integer" name="upd_isbn" placeholder="<%= book.isbn %>" value="<%=book.isbn%>" >
+
+    <label for="">summary</label>
+    <textarea name="upd_summary" id="" value="<%=book.summary%>"><%= book.summary %></textarea>
+
+    <label for="">rating</label>
+    <input type="text" name="upd_rating" placeholder="<%= book.rating %>" value="<%=book.rating%>" >
+
+    <input type="hidden" name="upd_book_id" value="<%=book.id%>"></input>
+
+    <button type="submit">submit</button>
+
+</form>
+  <%  } %>
