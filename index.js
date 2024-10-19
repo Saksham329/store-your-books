@@ -24,8 +24,27 @@ const db = new pg.Client({
     database:process.env.db_database,
     password:process.env.db_password,
     port:process.env.db_port,
-})
+    ssl: {
+        rejectUnauthorized: false, // Required for Render-hosted PostgreSQL
+      },
+    });
+
 db.connect();
+const isProduction = process.env.NODE_ENV === 'production';
+const dbConfig = isProduction
+  ? {
+      connectionString: process.env.DATABASE_URL,
+      ssl: { rejectUnauthorized: false },
+    }
+  : {
+      user: process.env.db_user,
+      host: process.env.db_host,
+      database: process.env.db_database,
+      password: process.env.db_password,
+      port: process.env.db_port,
+    };
+
+const db = new Pool(dbConfig);
 
 app.get("/",async(req,res)=>{
     try {
