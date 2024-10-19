@@ -41,7 +41,7 @@ const dbConfig = isProduction
       host: process.env.db_host,
       database: process.env.db_database,
       password: process.env.db_password,
-      port: process.env.db_port,
+      port: process.env.db_PORT,
     };
 
 const db = new Pool(dbConfig);
