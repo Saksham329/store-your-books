@@ -8,7 +8,7 @@ import dotenv from "dotenv";
 
 dotenv.config();
 const app = express()
-const port = process.env.port
+const port = process.env.PORT
 
 const { Pool } = pg;
 const __filename = fileURLToPath(import.meta.url);
@@ -25,15 +25,6 @@ const db = new pg.Client({
     password:process.env.db_password,
     port:process.env.db_port,
 })
-const connectionString = "postgresql://shivam_practice_user:rmFTLVJZMNgSloBgmdEGPNhCT6At0Mn3@dpg-cs5eptd6l47c73f458dg-a.oregon-postgres.render.com/shivam_practice";//you can create your postgreSQL server on render.com or Vercel and then they'll give u external URL copy that and paste it here
- 
-const db = new Pool({
-  connectionString: connectionString,
-  // If you're using a service like Heroku, you might need this for SSL:
-  ssl: {
-    rejectUnauthorized: false,
-  },
-});
 db.connect();
 
 app.get("/",async(req,res)=>{
